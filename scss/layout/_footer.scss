@@ -1,0 +1,41 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/functions' as func;
+
+.footer,
+.footer .container,
+.footer__content,
+.socmed-link {
+	display: flex;
+	flex-direction: column;
+}
+
+.footer {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	padding: 1em 0;
+	font-size: 0.75em;
+	text-align: center;
+}
+
+.footer .container {
+	gap: func.em(18, var.$font-size-primary);
+}
+
+.footer__content {
+	align-items: center;
+	gap: func.em(44, var.$font-size-primary);
+	color: var.$color-gray;
+}
+
+.socmed-links {
+	display: flex;
+	gap: 1.1em;
+}
+
+@media (min-width: 48em) {
+	.footer__content {
+		gap: func.em(32, var.$font-size-primary);
+	}
+}

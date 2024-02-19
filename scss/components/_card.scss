@@ -1,0 +1,29 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/functions' as func;
+
+.card-intro,
+.card-content,
+.card-content__image {
+	display: flex;
+	flex-direction: column;
+}
+
+.card-intro {
+	gap: func.em(16, var.$font-size-primary);
+	text-align: center;
+}
+
+.card-intro__title .light {
+	color: var.$color-gray;
+}
+
+.card-content__image img {
+	width: 100%;
+	height: auto;
+}
+
+@media (min-width: 37.5em) {
+	.card-intro__title {
+		font-size: func.em(30, var.$font-size-primary);
+	}
+}

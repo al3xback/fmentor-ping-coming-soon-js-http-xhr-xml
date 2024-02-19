@@ -1,0 +1,20 @@
+$color-blue: hsl(223, 87%, 63%);
+$color-blue-light: lighten($color-blue, 5%);
+
+$color-pale-blue: hsl(223, 100%, 88%);
+$color-light-red: hsl(354, 100%, 66%);
+
+$color-gray: hsl(0, 0%, 59%);
+$color-gray-light: lighten($color-gray, 20%);
+$color-gray-lighter: lighten($color-gray, 25%);
+$color-very-dark-blue: hsl(209, 33%, 12%);
+$color-white: hsl(0, 0%, 100%);
+
+$font-family-primary: 'Libre Franklin', sans-serif;
+$font-family-headings: 'Libre Franklin', sans-serif;
+
+$font-size-primary: 14px;
+
+$font-weight-300: 300;
+$font-weight-600: 600;
+$font-weight-700: 700;

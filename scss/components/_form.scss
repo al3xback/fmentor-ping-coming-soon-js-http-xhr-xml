@@ -1,0 +1,71 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/functions' as func;
+
+.form,
+.form__group {
+	display: flex;
+	flex-direction: column;
+}
+
+.form {
+	margin-top: func.em(20, var.$font-size-primary);
+	text-align: left;
+}
+
+.form__control {
+	padding: func.em(10, var.$font-size-primary)
+		func.em(24, var.$font-size-primary);
+	border: 1px solid var.$color-gray-light;
+	border-radius: 24px;
+	outline: none;
+	font-size: 1em;
+	color: inherit;
+}
+
+.form__control::-webkit-input-placeholder {
+	color: var.$color-gray-light;
+}
+
+.form__control:-ms-input-placeholder {
+	color: var.$color-gray-light;
+}
+
+.form__control::-ms-input-placeholder {
+	color: var.$color-gray-light;
+}
+
+.form__control::placeholder {
+	color: var.$color-gray-light;
+}
+
+.form__control.invalid,
+.form__control.invalid:focus-visible {
+	border-color: var.$color-light-red;
+}
+
+.form__error-message {
+	padding: 0 func.em(24, var.$font-size-primary);
+	margin: func.em(6, var.$font-size-primary) 0
+		func.em(12, var.$font-size-primary);
+	font-style: italic;
+	color: var.$color-light-red;
+}
+
+@media (min-width: 48em) {
+	.form__group {
+		position: relative;
+		flex-direction: row;
+		gap: func.em(16);
+	}
+
+	.form__control {
+		flex-grow: 1;
+	}
+
+	.form__error-message {
+		position: absolute;
+		left: 0;
+		top: 100%;
+		width: 100%;
+	}
+}
