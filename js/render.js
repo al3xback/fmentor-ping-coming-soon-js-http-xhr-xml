@@ -1,5 +1,7 @@
 const sectionWrapperEl = document.querySelector('.section-wrapper');
 const sectionTemplate = document.getElementById('section-template');
+const sectionHeadTemplate = document.getElementById('section-head-template');
+const sectionBodyTemplate = document.getElementById('section-body-template');
 const loadingEl = document.querySelector('.loading');
 
 const removeLoading = () => {
@@ -41,7 +43,15 @@ export const renderSectionContent = (data) => {
 	);
 	const sectionEl = sectionTemplateNode.querySelector('.section');
 
-	const cardIntroTitleEl = sectionEl.querySelector('.card-intro__title');
+	/* [section head] */
+	const sectionHeadTemplateNode = document.importNode(
+		sectionHeadTemplate.content,
+		true
+	);
+	const sectionHeadEl =
+		sectionHeadTemplateNode.querySelector('.section__head');
+
+	const cardIntroTitleEl = sectionHeadEl.querySelector('.card-intro__title');
 	const cardIntroTitleSpanEl = cardIntroTitleEl.querySelector('.light');
 	cardIntroTitleSpanEl.textContent = title.substring(
 		0,
@@ -49,12 +59,20 @@ export const renderSectionContent = (data) => {
 	);
 	cardIntroTitleEl.append(title.substring(title.lastIndexOf(' ')));
 
-	const cardIntroSubtitleEl = sectionEl.querySelector(
+	const cardIntroSubtitleEl = sectionHeadEl.querySelector(
 		'.card-intro__subtitle'
 	);
 	cardIntroSubtitleEl.textContent = subtitle;
 
-	const cardContentImageEl = sectionEl.querySelector(
+	/* [section body] */
+	const sectionBodyTemplateNode = document.importNode(
+		sectionBodyTemplate.content,
+		true
+	);
+	const sectionBodyEl =
+		sectionBodyTemplateNode.querySelector('.section__body');
+
+	const cardContentImageEl = sectionBodyEl.querySelector(
 		'.card-content__image img'
 	);
 	cardContentImageEl.src = './images/' + image;
@@ -62,6 +80,9 @@ export const renderSectionContent = (data) => {
 		.substring(0, image.indexOf('.'))
 		.replace('-', ' ');
 
+	/* [init] */
 	removeLoading();
+	sectionEl.appendChild(sectionHeadTemplateNode);
+	sectionEl.appendChild(sectionBodyTemplateNode);
 	sectionWrapperEl.appendChild(sectionTemplateNode);
 };

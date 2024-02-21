@@ -37,46 +37,48 @@
 	<body>
 		<style>
 			.section-wrapper {
+				flex: auto;
 				display: flex;
 				flex-direction: column;
-				text-align: center;
-			}
-
-			.section-wrapper > .section {
-				text-align: left;
+				align-items: center;
 			}
 		</style>
 
-		<template id="section-template">
-			<section class="section">
-				<div class="section__head">
-					<div class="card-intro">
-						<h2 class="card-intro__title">
-							<span class="light"></span>
-						</h2>
-						<p class="card-intro__subtitle"></p>
-						<form class="form" novalidate>
-							<div class="form__group">
-								<input
-									class="form__control form__control--email"
-									type="email"
-									placeholder="Your email address..." />
-								<div class="form__error-message"></div>
-								<button type="submit" class="btn btn--primary">
-									Notify Me
-								</button>
-							</div>
-						</form>
-					</div>
-				</div>
-				<div class="section__body">
-					<div class="card-content">
-						<div class="card-content__image">
-							<img width="278" height="170" />
+		<template id="section-head-template">
+			<div class="section__head">
+				<div class="card-intro">
+					<h2 class="card-intro__title">
+						<span class="light"></span>
+					</h2>
+					<p class="card-intro__subtitle"></p>
+					<form class="form" novalidate>
+						<div class="form__group">
+							<input
+								class="form__control form__control--email"
+								type="email"
+								placeholder="Your email address..." />
+							<div class="form__error-message"></div>
+							<button type="submit" class="btn btn--primary">
+								Notify Me
+							</button>
 						</div>
+					</form>
+				</div>
+			</div>
+		</template>
+
+		<template id="section-body-template">
+			<div class="section__body">
+				<div class="card-content">
+					<div class="card-content__image">
+						<img width="278" height="170" />
 					</div>
 				</div>
-			</section>
+			</div>
+		</template>
+
+		<template id="section-template">
+			<section class="section"></section>
 		</template>
 
 		<div class="wrapper">
