@@ -15,17 +15,17 @@
 	bottom: 0;
 	width: 100%;
 	padding: 1em 0;
-	font-size: 0.75em;
+	font-size: 0.85em;
 	text-align: center;
 }
 
 .footer .container {
-	gap: func.em(18, var.$font-size-primary);
+	gap: func.em(12, 12);
 }
 
 .footer__content {
 	align-items: center;
-	gap: func.em(44, var.$font-size-primary);
+	gap: func.em(32, 12);
 	color: var.$color-gray;
 }
 
@@ -36,6 +36,6 @@
 
 @media (min-width: 48em) {
 	.footer__content {
-		gap: func.em(32, var.$font-size-primary);
+		gap: func.em(32, 12);
 	}
 }

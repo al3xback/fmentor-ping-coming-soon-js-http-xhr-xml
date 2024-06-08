@@ -1,3 +1,4 @@
+@use '../abstracts/variables' as var;
 @use '../abstracts/functions' as func;
 
 header,
@@ -10,10 +11,14 @@ header {
 	align-items: center;
 }
 
+header h1 {
+	font-size: inherit;
+}
+
 #logo {
 	display: inline-flex;
-	width: func.em(43);
-	height: func.em(13);
+	width: func.em(60, var.$font-size-primary);
+	height: func.em(18, var.$font-size-primary);
 	background: url('../images/logo.svg');
 	background-repeat: no-repeat;
 	background-size: contain;
